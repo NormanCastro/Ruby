@@ -138,19 +138,20 @@
 #    puts "Numero Divisor #{i} y su resultado es #{numero}"
 #  end
 
-
-# PENDIENTE
-
 # Ejercicio 4
 # En el siguiente código:
 
-# a = 5
-# b = ''
-# b = '<ul>' + '<br>'  
-# a.times do
-#   b = b + '  <li> hola </li>' +'<br>'
-# end
-# b = b + '</ul>'
+# Realizado
+
+ # a = 5
+ # b = ''
+ # b = "<ul>\n"
+ # a.times do
+ #   b = b +"<li> hola </li>\n"
+ # end
+ # b = b + '</ul>'
+
+ # puts b
 
 
 # Modifica el código para que el contenido de b sea un string que contenga:
@@ -163,7 +164,6 @@
 # 	<li> hola </li>
 # </ul>
 
-# PENDIENTE
 
 # ---------------------
 
