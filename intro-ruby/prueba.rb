@@ -5,7 +5,7 @@ def read_alum(file_name)
   alum
 end
 
-alumnos = read_alum("notas.txt")
+alumnos = read_alum("alumnos.csv")
 alu1 = alumnos[0].to_a
 alu2 = alumnos[1].to_a
 alu3 = alumnos[2].to_a
@@ -80,6 +80,9 @@ alumno4["JP"].each do |v|
 	inasistencia = inasistencia += 1 if v == 0
 end	
 inasistencia4 = inasistencia
+
+ina_total = inasistencia1 + inasistencia2 + inasistencia3 + inasistencia4
+
 #------------------------------------
 opcion = 0
 while opcion != 4
@@ -95,25 +98,36 @@ opcion = gets.chomp.to_i
 	case opcion
 
 		when 1
-			puts ' Mostrando alumnos y sus promedios '
+			puts '----------------------------------'
+			puts " Mostrando alumnos y sus promedios: " 
+			puts ''
+			puts '----------------------------------'			
 			print "#{[alu1[0]]} su promedio es #{promedio1} , "
 			print "#{[alu2[0]]} su promedio es #{promedio2} , "
 			print "#{[alu3[0]]} su promedio es #{promedio3} , "
 			print "#{[alu4[0]]} su promedio es #{promedio4} , "
 
 		when 2
+			puts '----------------------------------'			
+			puts "Mostrando alumnos e inasistencias: "
+			puts ''
+			puts "----------------------------------"
 			print "#{[alu1[0]]} tiene #{inasistencia1} inasistencias , "
 			print "#{[alu2[0]]} tiene #{inasistencia2} inasistencias , "
 			print "#{[alu3[0]]} tiene #{inasistencia3} inasistencias , "
-			print "#{[alu4[0]]} tiene #{inasistencia4} inasistencias , "						
+			print "#{[alu4[0]]} tiene #{inasistencia4} inasistencias , "	
+			puts ''
+			print "El total de inasistencias es #{ina_total}"					
 		when 3
+			puts "----------------------------------"
 			puts 'Ingrese promedio minimo para aprobar'
 					aprueba = gets.chomp.to_f
+					aprueba = 5 if aprueba == 0
+			puts "----------------------------------"
 
 				puts "#{[alu1[0]]} Ha Aprobado" if promedio1 > aprueba
 				puts "#{[alu2[0]]} Ha Aprobado" if promedio2 > aprueba
 				puts "#{[alu3[0]]} Ha Aprobado" if promedio3 > aprueba
 				puts "#{[alu4[0]]} Ha Aprobado" if promedio4 > aprueba
-
-	end		
+	end	
 end	
